@@ -1,33 +1,40 @@
-import Link from "next/link";
-import React from "react";
+// components/Header.js
+import React from 'react';
+import Link from 'next/link';
+import styles from './Header.module.css'; // Импортируйте стили
 
 const Header = () => {
-    return(
-        <header>
-          <nav class="nav">
-              <div class="container">
-                  <div class="logo">
-                      <a href="#">Music-app</a>
-                  </div>
-                  <div class="main_list" id="mainListDiv">
-                      <ul>
-                          <li><a href="#">Home</a></li>
-                          <li><a href="#">About</a></li>
-                          <li><a href="#">my work</a></li>
-                          <li><a href="#">disegn</a></li>
-                          <li><a href="#">dcontact</a></li>
-                      </ul>
-                  </div>
-                  <div class="media_button">
-                      <button class="main_media_button" id="mediaButton">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                      </button>
-                  </div>
-              </div>
-          </nav>
-        </header>
-    )
-}
-export default Header
+  return (
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        <h1>MusicApp</h1>
+      </div>
+      <nav className={styles.nav}>
+        <ul>
+          <li>
+            <Link href="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/explore">
+              Explore
+            </Link>
+          </li>
+          <li>
+            <Link href="/library">
+              Library
+            </Link>
+          </li>
+          <li>
+            <Link href="/profile">
+              Profile
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
